@@ -1,0 +1,10 @@
+= short_alloc
+Howard Hinnant's example short_alloc (stack-based allocator) that demonstrates allocators in a short and sweet manner
+
+* http://howardhinnant.github.io/stack_alloc.html
+* https://github.com/HowardHinnant/HowardHinnant.github.io/blob/master/short_alloc.h
+* http://stackoverflow.com/a/11652436/5106243
+
+Just note: the allocator will only reuse memory on the stack (arena), 
+if allocate, deallocate sequences have stack-based order (push-pop sequence). Otherwise it will just leave the memory "already-reserved"; 
+which is not a big dead, since it's on the stack (arena) anyway and does not need to be deleted.
